@@ -1,0 +1,40 @@
+# Python & Virtual Environments
+backend/venv/
+venv/
+.venv/
+env/
+__pycache__/
+*/__pycache__/
+*/**/__pycache__/
+*.py[cod]
+*$py.class
+*.pyd
+
+# Node & Frontend
+frontend/node_modules/
+node_modules/
+frontend/dist/
+dist/
+.vite/
+
+# Environment Variables & Secrets
+.env
+.env.local
+.env.*.local
+backend/.env
+frontend/.env
+frontend/.env.local
+
+# IDE & OS Files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+~$*.pptx
+~$*.docx
+
+# Test & Coverage
+.coverage
+htmlcov/
+.pytest_cache/
