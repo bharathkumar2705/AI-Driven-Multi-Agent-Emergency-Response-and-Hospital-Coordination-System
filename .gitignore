@@ -38,3 +38,10 @@ desktop.ini
 .coverage
 htmlcov/
 .pytest_cache/
+
+# Presentations and Review Notes
+*.pptx
+*.ppt
+final_project_review.md
+final_project_review1
+viva_questions.md

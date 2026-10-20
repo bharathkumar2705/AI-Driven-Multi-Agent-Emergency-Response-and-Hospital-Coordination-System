@@ -58,6 +58,8 @@ The city is modeled as a 10×10 grid graph with varied base road weights (simula
 
 ## 🏗️ Architecture
 
+![AI-Driven Multi-Agent Emergency Response System Architecture](assets/architecture.png)
+
 ### Backend (Python / FastAPI)
 - **FastAPI**: REST endpoints for search, reasoning, and scenarios, plus WebSocket at `/ws/simulation` streaming 1Hz state ticks.
 - **Agent Engines**: Clean modular packages for Agents, Search, Knowledge, Reasoning, Decision, and Planning.
