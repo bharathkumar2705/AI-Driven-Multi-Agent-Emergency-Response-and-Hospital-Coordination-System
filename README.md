@@ -139,14 +139,6 @@ FOAI_Project/
 │   │   ├── App.jsx         # App router & layout shell
 │   │   └── main.jsx        # Vite entry point
 │   └── package.json
-├── final_project_review.md # Complete viva & case study grading rubric guide (Reviews 1 & 2)
-├── viva_questions.md       # Comprehensive viva Q&A for project defense
 ├── test_cases.py           # Standalone verification script for AI core engines
 └── README.md
 ```
-
----
-
-## 📚 Review & Viva Resources
-- **[final_project_review.md](file:///e:/FOAI_Project/final_project_review.md)**: Detailed mapping to Review 1 (10 Marks) and Review 2 (10 Marks) rubrics, covering PEAS, Search Strategies, Multi-Agent Execution, and Code Scalability.
-- **[viva_questions.md](file:///e:/FOAI_Project/viva_questions.md)**: Questions and answers addressing common professor queries regarding heuristics, search optimality, path length vs. cost, logic reasoning, and utility theory.
