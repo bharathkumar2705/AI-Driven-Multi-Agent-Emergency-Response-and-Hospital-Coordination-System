@@ -8,13 +8,29 @@ load_dotenv()
 MONGO_URI = os.getenv("MONGO_URI", "mongodb://localhost:27017")
 DB_NAME = os.getenv("DB_NAME", "foai_emergency")
 
+import re
+import urllib.parse
+
+def _sanitize_uri(uri: str) -> str:
+    if not uri:
+        return uri
+    match = re.match(r'^(mongodb(?:\+srv)?://)([^:]+):([^@]+)@([^/?]+)(.*)$', uri)
+    if match:
+        prefix, user, password, host, rest = match.groups()
+        # If password contains characters like @ or # that weren't escaped
+        quoted_user = urllib.parse.quote_plus(urllib.parse.unquote_plus(user))
+        quoted_password = urllib.parse.quote_plus(urllib.parse.unquote_plus(password))
+        return f"{prefix}{quoted_user}:{quoted_password}@{host}{rest}"
+    return uri
+
 _async_client: AsyncIOMotorClient = None
 _db = None
 
 async def connect_db():
     global _async_client, _db
     try:
-        _async_client = AsyncIOMotorClient(MONGO_URI, serverSelectionTimeoutMS=3000)
+        clean_uri = _sanitize_uri(MONGO_URI)
+        _async_client = AsyncIOMotorClient(clean_uri, serverSelectionTimeoutMS=3000)
         await _async_client.server_info()
         _db = _async_client[DB_NAME]
         print(f"[DB] Connected to MongoDB: {DB_NAME}")
