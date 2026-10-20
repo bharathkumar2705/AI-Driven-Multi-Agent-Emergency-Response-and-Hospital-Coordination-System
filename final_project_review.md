@@ -84,7 +84,7 @@ Use this structure to make your PowerPoint / Google Slides presentation. Each sl
 * **Key Bullets on Slide**:
   - City represented as a weighted graph $G = (V, E)$ with 100 intersections and 180 bidirectional road segments.
   - Road weights vary by base road capacity (arterial avenues vs. side streets) and dynamic traffic multipliers:
-    $$\text{Cost}(e) = \text{base\_cost} \times \text{traffic\_multiplier}$$
+    $$\text{Cost}(e) = \text{BaseCost} \times \text{TrafficMultiplier}$$
     *(NORMAL = 1.0×, MODERATE = 1.5×, CONGESTED = 2.5×, BLOCKED = $\infty$)*
 
 ```mermaid
@@ -136,7 +136,7 @@ graph LR
   - **Knowledge Base (KB)**: Stores asserted facts using predicate logic (`patient_requires_icu`, `hospital_icu_available`, `doctor_available`).
   - **Forward Chaining (Data-Driven Reasoning)**:
     - Starts from newly observed facts and fires Modus Ponens production rules until a fixpoint is reached.
-    - *Rule*: $\text{patient\_needs\_icu}(P) \land \text{hospital\_has\_icu}(H) \implies \text{hospital\_satisfies\_icu}(P, H)$
+    - *Rule*: $\text{PatientNeedsICU}(P) \land \text{HospitalHasICU}(H) \implies \text{HospitalSatisfiesICU}(P, H)$
     - Infers eligible hospitals: `hospital_eligible_for_patient(P01, H2)`.
   - **Backward Chaining (Goal-Driven Reasoning)**:
     - Starts with a query goal: `can_hospital_treat_patient(H1, P001)`?

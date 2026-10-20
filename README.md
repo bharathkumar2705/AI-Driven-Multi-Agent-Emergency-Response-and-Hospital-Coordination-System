@@ -46,7 +46,7 @@ The city is modeled as a 10×10 grid graph with varied base road weights (simula
 
 ### 4. Utility-Based Decision Making
 - The `DecisionEngine` uses a multi-attribute utility function to rank and select hospitals mathematically:
-  $$U = (w_{resource} \times \text{resource\_score}) + (w_{spec} \times \text{specialist\_score}) - (w_{dist} \times \text{dist\_score}) - (w_{traffic} \times \text{traffic\_score})$$
+  $$U = (w_{\text{res}} \times \text{ResourceScore}) + (w_{\text{spec}} \times \text{SpecialistScore}) - (w_{\text{dist}} \times \text{DistanceScore}) - (w_{\text{traffic}} \times \text{TrafficScore})$$
 - Weights dynamically adapt based on patient severity (e.g., ICU capacity is weighted heavily for CRITICAL cases, whereas distance is prioritized for LOW severity).
 
 ### 5. Planning Under Uncertainty & Dynamic Replanning
